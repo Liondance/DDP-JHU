@@ -60,7 +60,8 @@ shinyUI(
                     "Too Much Fun in Ibiza" = "ibiza",
                     "Clockwork Orange"      = "orange",
                     "Two Babies"            = "babies"
-                )
+                ),
+                selected = "ibiza"
             )
         ),
         mainPanel(
