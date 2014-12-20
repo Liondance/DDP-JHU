@@ -9,8 +9,7 @@ library(shiny);
 shinyUI(
     pageWithSidebar(
         headerPanel(
-            h2("Central Limit Theorem"),
-            h3("Illustrated in Shiny")
+            h3("Central Limit Theorem Illustrated in Shiny")
         ),
         sidebarPanel(
             h3("Parameters"),
@@ -32,7 +31,7 @@ shinyUI(
             ),
             sliderInput(
                 'S',
-                "Number of Samples",
+                "Number of samples",
                 1000,
                 min=1,
                 max=1000,
@@ -46,11 +45,18 @@ shinyUI(
                 max=40,
                 step=1
             ),
+            checkboxInput(
+                'mline',
+                "Mean line",
+                TRUE
+            ),
             radioButtons(
                 "theme",
-                "Theme:",
+                "Theme",
                 c(
                     "Two Shades of Grey"    = "grey",
+                    "Coral Reef"            = "reef",
+                    "Electric Youth"        = "electric",
                     "Too Much Fun in Ibiza" = "ibiza",
                     "Clockwork Orange"      = "orange",
                     "Two Babies"            = "babies"
@@ -58,7 +64,7 @@ shinyUI(
             )
         ),
         mainPanel(
-            plotOutput('clt_plot')
+            plotOutput('histograms')
         )
     )
 )

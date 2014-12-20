@@ -56,16 +56,9 @@
 
 <ol>
 <li>Have RStudio installed</li>
-<li>Write using R Markdown</li>
-<li>Use an empty line followed by three dashes to separate slides!</li>
+<li>more ...</li>
+<li class='..'>and more ...</li>
 </ol>
-
-<h3>Sponsored Links</h3>
-
-<ul>
-<li><a href="http://www.lakebolt.com/">Lakebolt Research</a></li>
-<li><a href="http://www.zensheet.com/">ZenSheet</a></li>
-</ul>
 
   </article>
   <!-- Presenter Notes -->
@@ -73,7 +66,7 @@
 
 <slide class="class" id="id" style="background:;">
   <hgroup>
-    <h2>Slide 2</h2>
+    <h2>Parameters</h2>
   </hgroup>
   <article data-timings="">
     
@@ -81,12 +74,83 @@
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-3" style="background:;">
+<slide class="class" id="id" style="background:;">
   <hgroup>
     <h2>Formula</h2>
   </hgroup>
   <article data-timings="">
     <p>The variance of the sampling distribution is <font size="+">\(s^2/N\)</font> where <font size="+">\(s^2\)</font> is the variance of the population</font></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Example</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    <pre><code class="r">twin.plot &lt;- function(P, lambda, S, N, type=&quot;grey&quot;) {
+    popl &lt;- rexp(P, lambda);
+
+    means &lt;- NULL;
+    for (i in 1:S) {
+        x &lt;- sample(popl, N, replace = T)
+        means &lt;- c(means, mean(x));
+    }
+
+    theme &lt;- themes[themes$type == type, ];
+
+    hp &lt;- &quot;Histogram of Population&quot;;
+    hs &lt;- &quot;Histogram of Sample Means&quot;;
+
+    par(mfrow = c(1,2));
+    hist(popl,  breaks=21, main=hp, xlab=&quot;&quot;, col=toString(theme$pcol));
+    hist(means, breaks=21, main=hs, xlab=&quot;&quot;, col=toString(theme$scol));
+}
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Sample plot</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/fig/unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>Acknowledgments</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Coursera</li>
+<li>Brian Caffo, PhD, Jeff Leek, PhD, Roger D. Peng, PhD</li>
+<li>Johns Hopkins University</li>
+<li>RStudio</li>
+<li>Slidify</li>
+</ul>
+
+<h3>Sponsored Links</h3>
+
+<ul>
+<li><a href="http://www.lakebolt.com/">Lakebolt Research</a></li>
+<li><a href="http://www.zensheet.com/">ZenSheet</a></li>
+</ul>
 
   </article>
   <!-- Presenter Notes -->
@@ -104,7 +168,7 @@
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='Slide 2'>
+        data-slide=2 title='Parameters'>
          2
       </a>
     </li>
@@ -112,6 +176,30 @@
       <a href="#" target="_self" rel='tooltip' 
         data-slide=3 title='Formula'>
          3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Example'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title=''>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Sample plot'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Acknowledgments'>
+         7
       </a>
     </li>
   </ul>
