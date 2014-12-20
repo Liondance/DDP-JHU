@@ -4,7 +4,7 @@
 # server.R
 #
 
-library(shiny)
+library(shiny);
 
 #
 # Color Themes
