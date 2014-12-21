@@ -1,0 +1,127 @@
+---
+title       : Visualizing Convergence
+subtitle    : Reactive demonstration of the Central Limit Theorem
+author      : Enzo Alda
+job         : Lakebolt Research
+framework   : io2012 # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js # {highlight.js, prettify, highlight}
+hitheme     : tomorrow # {tomorrow, zenburn}
+widgets     : [mathjax] # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, selfcontained, draft}
+knit        : slidify::knit2slides
+---
+
+## Learning via interactive visualization!
+### The Central Limit Theorem Reactive Demo (CLT-RD)
+Students learn concepts better when they can visualize, interact, and have fun! CLT-RD is meant to:
+* demonstrate the Central Limit Theorem empirically
+* help students learn while having fun!
+* serve as an example for building shiny apps
+
+### How it works
+CLT-RD extracts multiple samples from a randomly generated population, computes the mean of each sample, and shows a histogram of the distribution of the sample means, alongside a histogram of the population.
+
+Note: in this version, the population follows an exponential distribution.
+
+https://en.wikipedia.org/wiki/Central_limit_theorem
+https://en.wikipedia.org/wiki/Exponential_distribution
+
+---
+
+## CLT-RD Parameters
+### You, the students, are on the driver's seat!
+Students control the following parameters of the simulation:
+* Population size: the size of the population
+* lambda: the 'rate' parameter of the exponential distribution
+* Number of samples: the number of samples extracted from the population
+* Sample size: the size of each sample (this is the most important one!)
+
+### Central Limit Theorem in a nutshell
+In the extreme case of samples of size one (N=1) the distribution of the sample means mirrors the distribution of the population. As the sample size increases, the distribution of the sample means approximates a normal distribution. The distribution of sample means has the same mean as the population. As N increases, the asymptotic variance of the distribution of sample means is <font size="+">$&#x3C3^2/N$</font> where <font size="+">$&#x3C3^2$</font> is the variance of the population</font>
+
+---
+
+## Empirical CLT-RD Simulation Examples
+
+```{r echo=FALSE}
+library(shiny);
+
+#
+# Color Themes
+#
+themes <- data.frame(
+    rbind(
+        c("grey",     "grey69",      "grey42",      "red"),
+        c("reef",     "coral",       "blue",        "red"),
+        c("electric", "chartreuse1", "darkorchid1", "darkgreen"),
+        c("ibiza",    "gold",        "blue",        "red"),
+        c("orange",   "darkorange1", "darkorange3", "darkgreen"),
+        c("babies",   "lightblue",   "pink",        "red")
+    )
+);
+
+names(themes) <- c("type", "pcol", "scol", "lcol");
+
+#' 
+#' twin.plot
+#'
+#' plots two histograms side by side
+#' the one on the left shows the distribution of a population
+#' the one on the right shows the distribution of sample means
+#' this version only handles an exponential distribution
+#' 
+#' @param P size of the entire population
+#' @param lambda rate parameter for the exponential distribution
+#' @param S number of samples taken from the population
+#' @param N size of each sample
+#' @param type (optional) theme identifier for histogram rendering
+#' @param mline (optional) show true (population) mean line in histogram
+#' 
+twin.plot <- function(P, lambda, S, N, type="grey", mline=TRUE) {
+    popl <- rexp(P, lambda);
+    
+    means <- NULL;
+    for (i in 1:S) {
+        x <- sample(popl, N, replace = T)
+        means <- c(means, mean(x));
+    }
+
+    theme <- themes[themes$type == type, ];
+    
+    hp <- "Population";
+    hs <- paste("Sample Means (N = ", toString(N), ")", sep="");
+
+    hist(popl,  breaks=21, main=hp, xlab="", col=toString(theme$pcol));
+    hist(means, breaks=21, main=hs, xlab="", col=toString(theme$scol));
+    if (mline) {
+        abline(v = mean(popl), col=toString(theme$lcol), lwd=2);
+    }
+}
+
+P <- 100000;     # population size
+l <- 1;          # lambda
+S <- 1000;       # number of samples
+t <- "electric"; # color theme
+m <- TRUE;
+
+test <- function(N) {
+    twin.plot(P, l, S, N, t, m);
+}
+
+par(mfrow = c(2,2));
+test(1);
+test(20);
+```
+
+---
+
+## Acknowledgments
+
+* Brian Caffo, PhD, Jeff Leek, PhD, Roger D. Peng, PhD
+* All the talented folks at RStudio (http://www.rstudio.com/)
+* Slidify and the amazing Ramnath (https://github.com/ramnathv)
+* Coursera and the Johns Hopkins University (https://www.coursera.org/jhu)
+
+### Sponsored Links
+* <a href="http://www.lakebolt.com/">Lakebolt Research</a>
+* <a href="http://www.zensheet.com/">ZenSheet</a>
