@@ -13,15 +13,13 @@ knit        : slidify::knit2slides
 
 ## Learning via interactive visualization!
 ### The Central Limit Theorem Reactive Demo (CLT-RD)
-Students learn concepts better when they can visualize, interact, and have fun! CLT-RD is meant to:
+Students learn concepts better when they can visualize and interact. CLT-RD is meant to:
 * demonstrate the Central Limit Theorem empirically
 * help students learn while having fun!
 * serve as an example for building shiny apps
 
 ### How it works
-CLT-RD extracts multiple samples from a randomly generated population, computes the mean of each sample, and shows a histogram of the distribution of the sample means, alongside a histogram of the population.
-
-Note: in this version, the population follows an exponential distribution.
+CLT-RD extracts multiple samples from a randomly generated population that follows an exponential distribution. CLT-RD computes the mean of each sample, and shows a histogram of the sample means, alongside a histogram of the population.
 
 https://en.wikipedia.org/wiki/Central_limit_theorem
 https://en.wikipedia.org/wiki/Exponential_distribution
