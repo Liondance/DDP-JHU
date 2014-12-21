@@ -1,6 +1,8 @@
 # Instructions to graders
 
-## Central limit theorem demonstration (Project: Developing Data Products - Johns Hopkins - Coursera)
+## Central limit theorem demonstration
+
+### (Project: Developing Data Products - Johns Hopkins - Coursera)
 
 1. To run the shiny application, follow this link: https://liondance.shinyapps.io/CLT-RD/
 2. Look at the instructions displayed on the shiny app itself: it couldn't be easier!
