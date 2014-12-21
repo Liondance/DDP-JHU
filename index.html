@@ -1,1 +1,186 @@
-My Page
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Visualizing Convergence</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Visualizing Convergence">
+  <meta name="author" content="Enzo Alda">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Visualizing Convergence</h1>
+    <h2>Reactive demonstration of the Central Limit Theorem</h2>
+    <p>Enzo Alda<br/>Lakebolt Research</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Learning via interactive visualization!</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>The Central Limit Theorem Reactive Demo (CLT-RD)</h3>
+
+<p>Students learn concepts better when they can visualize, interact, and have fun! CLT-RD is meant to:</p>
+
+<ul>
+<li>demonstrate the Central Limit Theorem empirically</li>
+<li>help students learn while having fun!</li>
+<li>serve as an example for building shiny apps</li>
+</ul>
+
+<h3>How it works</h3>
+
+<p>CLT-RD extracts multiple samples from a randomly generated population, computes the mean of each sample, and shows a histogram of the distribution of the sample means, alongside a histogram of the population.</p>
+
+<p>Note: in this version, the population follows an exponential distribution.</p>
+
+<p><a href="https://en.wikipedia.org/wiki/Central_limit_theorem">https://en.wikipedia.org/wiki/Central_limit_theorem</a>
+<a href="https://en.wikipedia.org/wiki/Exponential_distribution">https://en.wikipedia.org/wiki/Exponential_distribution</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>CLT-RD Parameters</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>You, the students, are on the driver&#39;s seat!</h3>
+
+<p>Students control the following parameters of the simulation:</p>
+
+<ul>
+<li>Population size: the size of the population</li>
+<li>lambda: the &#39;rate&#39; parameter of the exponential distribution</li>
+<li>Number of samples: the number of samples extracted from the population</li>
+<li>Sample size: the size of each sample (this is the most important one!)</li>
+</ul>
+
+<h3>Central Limit Theorem in a nutshell</h3>
+
+<p>In the extreme case of samples of size one (N=1) the distribution of the sample means mirrors the distribution of the population. As the sample size increases, the distribution of the sample means approximates a normal distribution. The distribution of sample means has the same mean as the population. As N increases, the asymptotic variance of the distribution of sample means is <font size="+">\(&#x3C3^2/N\)</font> where <font size="+">\(&#x3C3^2\)</font> is the variance of the population</font></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Empirical CLT-RD Simulation Examples</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/fig/unnamed-chunk-1-1.png" alt="plot of chunk unnamed-chunk-1"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Acknowledgments</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Brian Caffo, PhD, Jeff Leek, PhD, Roger D. Peng, PhD</li>
+<li>All the talented folks at RStudio (<a href="http://www.rstudio.com/">http://www.rstudio.com/</a>)</li>
+<li>Slidify and the amazing Ramnath (<a href="https://github.com/ramnathv">https://github.com/ramnathv</a>)</li>
+<li>Coursera and the Johns Hopkins University (<a href="https://www.coursera.org/jhu">https://www.coursera.org/jhu</a>)</li>
+</ul>
+
+<h3>Sponsored Links</h3>
+
+<ul>
+<li><a href="http://www.lakebolt.com/">Lakebolt Research</a></li>
+<li><a href="http://www.zensheet.com/">ZenSheet</a></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Learning via interactive visualization!'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='CLT-RD Parameters'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Empirical CLT-RD Simulation Examples'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Acknowledgments'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
