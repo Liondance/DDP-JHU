@@ -7,9 +7,16 @@
 library(shiny);
 
 shinyUI(
-    pageWithSidebar(
-        headerPanel(
-            h3("Central Limit Theorem Illustrated in Shiny")
+    fluidPage(
+        fluidRow(
+            h3("Central Limit Theorem - Reactive Demo in Shiny"),
+            p("CLT-RD extracts multiple samples from a randomly generated population, which follows an exponential distribution, and shows a histogram of the sample means, alongside a histogram of the population."),
+            h4("instructions:"),
+            p("Observe how the distribution of sample means converges to a normal distribution as the sample size is increased."),
+            p("Increasing the number of samples improves the 'histogram resolution' of the sample mean distribution."),
+            p("Changing the size of the population has little effect, unless reduced to only a few data points."),
+            p("Note that CLT-RD samples from the population with replacement."),
+            p("The parameter lambda affects the expected mean of the population. The expected mean of an exponential distribution is 1/lambda.")
         ),
         sidebarPanel(
             h3("Parameters"),

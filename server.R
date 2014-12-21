@@ -48,8 +48,8 @@ twin.plot <- function(P, lambda, S, N, type="grey", mline=TRUE) {
 
     theme <- themes[themes$type == type, ];
     
-    hp <- "Histogram of Population";
-    hs <- "Histogram of Sample Means";
+    hp <- "Population";
+    hs <- paste("Sample Means (N = ", toString(N), ")", sep="");
 
     par(mfrow = c(1,2));
     hist(popl,  breaks=21, main=hp, xlab="", col=toString(theme$pcol));
